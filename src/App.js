@@ -1,25 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
+import React from "react";
+import Home from "./Home";
+import Login from "./login";
+import SignUp from "./register";
+import Contact from "./Contact";
+import FoodCourt from "./FoodCourt";
+//import food from "./food.html"
+import Parking from "./Parking";
+import Default from "./Default";
+import { Switch,Route } from 'react-router-dom';
+import Navbar from "./Navbar";
+ 
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      
+      <Navbar/>
+
+      <Switch>
+        <Route exact path = "/" component = {Default}/>
+        <Route exact path = "/Home" component = {Home}/>
+        <Route exact path = "/Contact" component = {Contact}/>
+        <Route exact path = "/Parking" component = {Parking}/>
+        <Route exact path = "/FoodCourt" component = {FoodCourt}/>
+        <Route exact path = "/Login" component = {Login}/>
+        <Route exact path = "/Register" component = {SignUp}/>
+      </Switch>
     </div>
+      
+    
   );
 }
 
 export default App;
+
